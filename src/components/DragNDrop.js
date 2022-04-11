@@ -12,7 +12,7 @@ function DragNDrop({ data }) {
   const dragItemNode = useRef();
 
     // 1. Handle onDragStart
-  const handletDragStart = (e, item) => {
+  const handleDragStart = (e, item) => {
     dragItemNode.current = e.target;
     // the reason we add a dragend event listener here is that this event works only with the node we are dragging and not all nodes
     dragItemNode.current.addEventListener("dragend", handleDragEnd);
@@ -73,7 +73,7 @@ function DragNDrop({ data }) {
               <div
                 draggable
                 key={item}
-                onDragStart={(e) => handletDragStart(e, { grpI, itemI })}
+                onDragStart={(e) => handleDragStart(e, { grpI, itemI })}
                 onDragEnter={
                   dragging
                     ? (e) => {
